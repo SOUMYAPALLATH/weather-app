@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <title>Weather App</title>
+
+    <style>
+    body {
+     background-image: url('https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/cloud/cumulus-cloud.jpg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: 100% 100%;
+    }
+
+
+      form {
+        margin: 30px auto;
+        width: 90% !important;
+      }
+
+      form h2 {
+        margin: 20px 0px 30px 0px;
+      }
+
+      form input,
+      label {
+        margin: 5px 0px;
+      }
+      .container {
+
+        width:20%;
+        background-color:grey;
+        margin: 60px;
+
+      }
+      .info {
+        display: flex;
+      }
+
+      .row {
+
+     display: flex;
+     flex-wrap: wrap;
+
+}
+     .col {
+  flex: 1 0 0%;
+}
+    .card-body {
+
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
+
+ .card-title {
+  margin-bottom: 0.5rem;
+}
+.card-text:last-child {
+  margin-bottom: 0;
+}
+body {
+  margin: 0;
+  font-family:sans-serif ;
+  font-size: 1 rem ;
+  font-weight:400;
+  line-height:1.5);
+  color:black;
+  text-align:left;
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: black;
+  border: none;
+  color:white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+}
+    </style>
+  </head>
+
+  <body>
+    <form method="post">
+      <h2>Weather App</h2>
+
+      <div class="form-group">
+        <label>City Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="City Name"
+          name="name"
+        />
+      </div>
+
+      <br />
+      <button type="submit" class=>SEARCH</button>
+    </form>
+    <div class="container" style="text-transform:uppercase">
+      <div class="row">
+        <div class="col">
+          <div class="card " style="max-width: 20rem">
+            <div class="card-body">
+              <h1 class="card-title">{{ city_name }}</h1>
+              <div class="info">
+                <div class="right">
+                  <h3 class="card-text">{{ temp }}&deg;C</h3>
+                  <h4 class="card-text">{{ weather }}</h4>
+                </div>
+                <div class="left">
+                  &nbsp;&nbsp;
+
+                  <img src="http://openweathermap.org/img/w/{{icon}}.png" alt="" />
+                </div>
+              </div>
+
+
+              <h5>Min Temp : {{min_temp}}&deg;C</h5>
+              <h5>Max Temp : {{max_temp}}&deg;C</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
